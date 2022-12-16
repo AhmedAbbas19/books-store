@@ -1,0 +1,52 @@
+.bookCard {
+  width: 200px;
+}
+
+.info {
+  padding: 8px 0;
+}
+
+.status {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 4px 12px;
+  border-top-right-radius: 6px;
+  margin: 0;
+  background-color: #00ace6;
+}
+
+.icons {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  img {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.thumb {
+  position: relative;
+  .img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    box-shadow: 6px 7px 5px #0e0e0e;
+  }
+}
+
+
+.author {
+  margin: 4px 0;
+  color: #ffcc21;
+}
+
+.title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+

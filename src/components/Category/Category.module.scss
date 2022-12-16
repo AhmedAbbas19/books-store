@@ -1,0 +1,13 @@
+.title {
+    padding: 10px;
+    color: #fff;
+    border-bottom: 1px solid #7a7a7a;
+    margin-bottom: 32px;
+}
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 30px;
+    justify-content: center;
+}

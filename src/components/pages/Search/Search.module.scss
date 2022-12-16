@@ -1,0 +1,37 @@
+.search_bar {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+}
+
+.search_bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+}
+
+.close_search {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 50px;
+  height: 53px;
+  background: #0095e6;
+  background-image: url("../../../icons/arrow-back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+}
+
+.no_results {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 20px;
+}
