@@ -13,6 +13,8 @@ const config = {
 
 export const getAll = () => axiosInstance.get<any, {books: IBook[]}>("books", config);
 
+export const getOne = (id: string) => axiosInstance.get<any, {book: IBook}>(`books/${id}`, config);
+
 export const update = (id: number, shelf: IShelf) => axiosInstance.put<any, IBook>(`books/${id}`, {shelf}, config);
 
 export const search = (query: string, maxResults: number = 300) => axiosInstance.post<any, {books: IBook[]}>("search", {query, maxResults}, config);

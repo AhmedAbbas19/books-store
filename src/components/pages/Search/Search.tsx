@@ -25,7 +25,7 @@ const Search: React.FC<SearchProps> = () => {
   return (
     <>
       <div className={classes.search_bar}>
-        <Link to="/" className={classes.close_search}>Close</Link>
+        <Link to="/" className={classes.close_search}>Back</Link>
         <input type="text" placeholder="Search by title, author, or ISBN" onChange={changeHandler}/>
       </div>
       <div className="container">

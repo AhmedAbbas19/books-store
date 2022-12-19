@@ -2,6 +2,7 @@ import { IBook, IShelf, updateShelf } from "../../store/books-reducer";
 import classes from "./Book.module.scss";
 import { useDispatch } from "react-redux";
 import Select from "../Select/Select";
+import { Link } from "react-router-dom";
 
 const Book: React.FC<{book: IBook}> = ({book}) => {
     const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const Book: React.FC<{book: IBook}> = ({book}) => {
         <div className={classes.bookCard}>
             <div className={classes.thumb}>
                 {book.shelf && <p className={classes.status}>{book.shelf}</p>}
-                <img src={book.imageLinks?.smallThumbnail || 'https://via.placeholder.com/200x300'} alt={book.title} className={classes.img}/>
+                <Link to={`/book/${book.id}`}>
+                    <img src={book.imageLinks?.smallThumbnail || 'https://via.placeholder.com/200x300'} alt={book.title} className={classes.img}/>
+                </Link>
                 <Select 
                     options={[
                         {value: IShelf.reading, label: 'Currently Reading'},

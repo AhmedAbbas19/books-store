@@ -1,4 +1,4 @@
-import Skeleton from "./Skeleton";
+import Skeleton from "react-loading-skeleton";
 
 const BookSkeleton: React.FC<{ repeat: number }> = ({ repeat }) => {
   return (

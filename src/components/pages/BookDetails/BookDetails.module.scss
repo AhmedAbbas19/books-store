@@ -1,0 +1,89 @@
+.bookCard {
+  display: flex;
+  margin-top: 40px;
+}
+
+.info {
+  padding: 8px 0;
+  margin-left: 32px;
+}
+
+.status {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 4px 12px;
+  border-top-right-radius: 6px;
+  margin: 0;
+  background-color: #00ace6;
+}
+
+.icons {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  img {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.thumb {
+  position: relative;
+  min-width: 300px;
+  height: 100%;
+  .img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    box-shadow: 6px 7px 5px #0e0e0e;
+  }
+}
+
+.author {
+  margin: 4px 0;
+  color: #ffcc21;
+}
+
+.title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.description {
+  color: #c1c1c1;
+  line-height: 1.4;
+}
+
+.category {
+  color: #fff;
+  background-color: #e62900;
+  padding: 4px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.rating {
+  color: #c1c1c1;
+  img {
+    vertical-align: text-bottom;
+    margin-right: 8px;
+  }
+}
+
+.close_search {
+  display: block;
+  margin-top: 24px;
+  width: 50px;
+  height: 53px;
+  background: #0095e6;
+  background-image: url("../../../icons/arrow-back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+}

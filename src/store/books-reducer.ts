@@ -1,5 +1,5 @@
 import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
-import { getAll, update, search } from "../api/books";
+import { getAll, update, search, getOne } from "../api/books";
 
 export enum IShelf {
   wantToRead = "wantToRead",
@@ -15,9 +15,19 @@ export interface IBook {
   shelf: IShelf;
   authors: string[];
   imageLinks: { smallThumbnail: string; thumbnail: string };
+  categories: string[];
+  averageRating: number;
+  ratingsCount: number;
 }
 
-const initialState: {data: IBook[], searchList: IBook[],loading: boolean} = {
+export interface IBookState {
+  data: IBook[];
+  searchList: IBook[];
+  detailedBook?: IBook;
+  loading: boolean
+}
+
+const initialState: IBookState = {
   data: [],
   searchList: [],
   loading: false
@@ -45,7 +55,10 @@ const booksSlice = createSlice({
             return { ...b, shelf: action.payload.shelf };
           }
           return b;
-        })
+        }),
+        detailedBook: state.detailedBook && state.detailedBook.id === action.payload.id ? {
+          ...state.detailedBook, shelf: action.payload.shelf
+        } : state.detailedBook
       };
     },
     addSearchList: (state, action: PayloadAction<IBook[]>) => {
@@ -53,6 +66,9 @@ const booksSlice = createSlice({
         const book = state.data.find(b => b.id === q.id);
         return {...q, shelf: book?.shelf || q.shelf}
       })};
+    },
+    addDetailedBook: (state, action: PayloadAction<IBook>) => {
+      return {...state, loading: false, detailedBook: action.payload};
     },
     loading: (state, action: PayloadAction<boolean>) => {
       return {...state, loading: action.payload}
@@ -82,6 +98,14 @@ export const searchBooks = (query: string): any => {
     dispatch(booksActions.loading(true));
     const {books} = await search(query);
     dispatch(booksActions.addSearchList(books?.length ? books : []));
+  };
+};
+
+export const fetchBook = (id: string): any => {
+  return async (dispatch: Dispatch) => {
+    dispatch(booksActions.loading(true));
+    const {book} = await getOne(id);
+    dispatch(booksActions.addDetailedBook(book));
   };
 };
 

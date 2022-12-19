@@ -1,15 +1,17 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import classes from './App.module.scss';
+import Header from './components/Header/Header';
+import BookDetails from './components/pages/BookDetails/BookDetails';
 import Home from "./components/pages/Home/Home";
 import Search from "./components/pages/Search/Search";
 
 const App: React.FC = () => {
   return (
     <>
-      <div className={classes.title}><h1>Books Store</h1></div>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/search" element={<Search/>}></Route>
+        <Route path="/book/:id" element={<BookDetails/>}></Route>
         <Route path="*" element={<Navigate to="/" replace />}/>
       </Routes>
     </>
