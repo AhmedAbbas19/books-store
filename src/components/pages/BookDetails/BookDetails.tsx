@@ -11,9 +11,7 @@ import Select from "../../Select/Select";
 import BookDetailsSkeleton from "../../Skeleton/BookDetailsSkeleton";
 import classes from "./BookDetails.module.scss";
 
-interface BookDetailsProps {}
-
-const BookDetails: React.FC<BookDetailsProps> = () => {
+const BookDetails: React.FC = () => {
   const { id } = useParams();
   const {loading, detailedBook: book} = useSelector(state => state.books);
   const dispatch = useDispatch();
