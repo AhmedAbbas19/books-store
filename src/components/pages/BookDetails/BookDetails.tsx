@@ -20,7 +20,7 @@ const BookDetails: React.FC = () => {
     dispatch(fetchBook(String(id)));
   }, [id, dispatch]);
 
-  const updateShelfHandler = (id: number, shelf: IShelf): void => {
+  const updateShelfHandler = (id: string, shelf: IShelf): void => {
     dispatch(updateShelf(id, shelf));
   };
 

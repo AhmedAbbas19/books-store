@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Book: React.FC<{book: IBook}> = ({book}) => {
     const dispatch = useDispatch();
 
-    const updateShelfHandler = (id: number, shelf: IShelf): void => {
+    const updateShelfHandler = (id: string, shelf: IShelf): void => {
         dispatch(updateShelf(id, shelf));
     }
 

@@ -9,15 +9,15 @@ export enum IShelf {
 }
 
 export interface IBook {
-  id: number;
+  id: string;
   title: string;
   description: string;
   shelf: IShelf;
   authors: string[];
-  imageLinks: { smallThumbnail: string; thumbnail: string };
-  categories: string[];
-  averageRating: number;
-  ratingsCount: number;
+  imageLinks?: { smallThumbnail: string; thumbnail: string };
+  categories?: string[];
+  averageRating?: number;
+  ratingsCount?: number;
 }
 
 export interface IBookState {
@@ -40,7 +40,7 @@ const booksSlice = createSlice({
     addBooks: (state, action: PayloadAction<IBook[]>) => {
       return {...state, loading: false, data: [...action.payload]};
     },
-    updateShelf: (state, action: PayloadAction<{ id: number; shelf: IShelf }>) => {
+    updateShelf: (state, action: PayloadAction<{ id: string; shelf: IShelf }>) => {
       return {
         ...state,
         loading: false,
@@ -85,7 +85,7 @@ export const fetchBooks = (): any => {
   };
 };
 
-export const updateShelf = (id: number, shelf: IShelf): any => {
+export const updateShelf = (id: string, shelf: IShelf): any => {
     return async (dispatch: Dispatch) => {
       dispatch(booksActions.loading(true));
       await update(id, shelf);
