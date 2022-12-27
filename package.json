@@ -67,7 +67,7 @@
       "!src/**/*.d.ts"
     ],
     "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|scss)$": "identity-obj-proxy"
     }
   }
 }

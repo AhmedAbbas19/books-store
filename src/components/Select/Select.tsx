@@ -14,7 +14,7 @@ interface ISelectProps {
 const Select: React.FC<ISelectProps> = ({options, initial, changeHandler}) => {
   return (
     <div className={classes.select}>
-      <select value={initial || 'none'} onChange={(e) => changeHandler(e)}>
+      <select value={initial || 'none'} onChange={(e) => changeHandler(e)} data-testid="select">
         <option value="" disabled>Select ...</option>
         {options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
       </select>
