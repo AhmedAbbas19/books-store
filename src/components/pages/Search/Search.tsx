@@ -32,7 +32,12 @@ const Search: React.FC<SearchProps> = () => {
       </div>
       <div className="container">
         {!!books.length ? <Category title={'Search Results'} books={books}></Category> : 
-        searchKey && <div className={classes.no_results}>No Search Results.</div>
+        searchKey && (
+          <div className={classes.no_results}>
+            <img src="/assets/png/no-result.png" alt="" />
+            <span>No Search Results.</span>
+          </div>
+        )
         }
       </div>
     </>

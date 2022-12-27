@@ -1,7 +1,8 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import BookDetails from './components/pages/BookDetails/BookDetails';
 import Home from "./components/pages/Home/Home";
+import NotFound from './components/pages/NotFound/NotFound';
 import Search from "./components/pages/Search/Search";
 
 const App: React.FC = () => {
@@ -9,10 +10,10 @@ const App: React.FC = () => {
     <>
       <Header/>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/search" element={<Search/>}></Route>
-        <Route path="/book/:id" element={<BookDetails/>}></Route>
-        <Route path="*" element={<Navigate to="/" replace />}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/search" element={<Search/>}/>
+        <Route path="/book/:id" element={<BookDetails/>}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </>
   );
