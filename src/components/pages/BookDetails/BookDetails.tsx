@@ -49,7 +49,7 @@ const BookDetails: React.FC = () => {
                   <p className={classes.author}>By: {book.authors?.join(', ')}</p>
                   <p className={classes.title}>{book.title}</p>
                   {book.averageRating && <p className={classes.rating}>
-                      <img src="/assets/svg/star.svg" alt="" width="24" height="24"/>
+                      <img src={window.location.origin + "/assets/svg/star.svg"} alt="" width="24" height="24"/>
                       {book.averageRating} ({book.ratingsCount})
                   </p>}
                   <p className={classes.description}>{book.description}</p>
