@@ -5,6 +5,7 @@ import Category from "../../Category/Category";
 import { useDispatch } from "react-redux";
 import { searchBooks, booksActions } from "../../../store/books-reducer";
 import { useEffect, useState } from "react";
+import noResults from "../../../assets/png/no-result.png";
 
 interface SearchProps {}
 
@@ -34,7 +35,7 @@ const Search: React.FC<SearchProps> = () => {
         {!!books.length ? <Category title={'Search Results'} books={books}></Category> : 
         searchKey && (
           <div className={classes.no_results}>
-            <img src={window.location.origin + "/assets/png/no-result.png"} alt="" />
+            <img src={noResults} alt="" />
             <span>No Search Results.</span>
           </div>
         )

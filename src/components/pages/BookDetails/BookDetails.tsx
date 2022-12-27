@@ -10,6 +10,7 @@ import {
 import Select from "../../Select/Select";
 import BookDetailsSkeleton from "../../Skeleton/BookDetailsSkeleton";
 import classes from "./BookDetails.module.scss";
+import star from "../../../assets/svg/star.svg";
 
 const BookDetails: React.FC = () => {
   const { id } = useParams();
@@ -49,7 +50,7 @@ const BookDetails: React.FC = () => {
                   <p className={classes.author}>By: {book.authors?.join(', ')}</p>
                   <p className={classes.title}>{book.title}</p>
                   {book.averageRating && <p className={classes.rating}>
-                      <img src={window.location.origin + "/assets/svg/star.svg"} alt="" width="24" height="24"/>
+                      <img src={star} alt="" width="24" height="24"/>
                       {book.averageRating} ({book.ratingsCount})
                   </p>}
                   <p className={classes.description}>{book.description}</p>
