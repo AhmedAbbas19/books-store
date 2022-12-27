@@ -1,11 +1,19 @@
 .bookCard {
-  display: flex;
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: start;
+  }
 }
 
 .info {
   padding: 8px 0;
-  margin-left: 32px;
+  @media only screen and (min-width: 768px) {
+    margin-left: 32px;
+  }
 }
 
 .status {
@@ -32,6 +40,7 @@
 .thumb {
   position: relative;
   min-width: 300px;
+  max-width: 300px;
   height: 100%;
   .img {
     display: block;

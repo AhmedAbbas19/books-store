@@ -32,7 +32,7 @@ const BookDetails: React.FC = () => {
             {(!book || loading) && <BookDetailsSkeleton/>}
             {(book && !loading) && (<>
               <div className={classes.thumb}>
-                  {book.shelf && <p className={classes.status}>{book.shelf}</p>}
+                  {(book.shelf && book.shelf !== IShelf.none) && <p className={classes.status}>{book.shelf}</p>}
                   <img src={book.imageLinks?.thumbnail || 'https://via.placeholder.com/300x450'} alt={book.title} className={classes.img}/>
                   <Select
                       options={[

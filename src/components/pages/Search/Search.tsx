@@ -11,7 +11,7 @@ interface SearchProps {}
 
 const Search: React.FC<SearchProps> = () => {
   const [searchKey, setSearchKey] = useState('');
-  const {searchList: books} = useSelector(state => state.books);
+  const {searchList: books, loading} = useSelector(state => state.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,8 +32,8 @@ const Search: React.FC<SearchProps> = () => {
         <input type="text" placeholder="Search by title, author, or ISBN" onChange={changeHandler}/>
       </div>
       <div className="container">
-        {!!books.length ? <Category title={'Search Results'} books={books}></Category> : 
-        searchKey && (
+        {(!!books.length || loading) ? <Category title={'Search Results'} books={books}></Category> : 
+        (searchKey && !loading) && (
           <div className={classes.no_results}>
             <img src={noResults} alt="" />
             <span>No Search Results.</span>
